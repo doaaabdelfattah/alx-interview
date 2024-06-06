@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from collections import deque
 '''
 Pascal Triangle
 '''
@@ -12,13 +11,13 @@ def canUnlockAll(boxes):
     visited = set()
     boxesNumber = len(boxes)
     # Create a queue
-    queue = deque([0])
+    queue = [0]
     visited.add(0)
 
     # Iterate over the queue
     while queue:
         # get the current box
-        current_box = queue.popleft()
+        current_box = queue.pop(0)
         # Check if the current box has no keys
         if not boxes[current_box]:
             break
