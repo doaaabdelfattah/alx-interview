@@ -8,28 +8,16 @@ def canUnlockAll(boxes):
     '''
     Lockboxes coding problem
     '''
-    visited = set()
-    boxesNumber = len(boxes)
-    # Create a queue
-    queue = [0]
-    visited.add(0)
+    for key in range(1, len(boxes)):
+        flag = False
+        for box in range(len(boxes)):
+            if key in boxes[box] and box != key:
+                flag = True
+                break
+        if not flag:
+            return False
 
-    # Iterate over the queue
-    while queue:
-        # get the current box
-        current_box = queue.pop(0)
-        # Check if the current box has no keys
-        if not boxes[current_box]:
-            break
-        # Open the box
-        visited.add(current_box)
-        # Add the keys from the current box to the queue
-        for key in boxes[current_box]:
-            if key not in visited:
-                queue.append(key)
-                visited.add(key)
-
-    return len(visited) == boxesNumber
+    return True
 
 
 # 1. box is list of Lists
