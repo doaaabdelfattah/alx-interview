@@ -21,10 +21,6 @@ def canUnlockAll(boxes):
         # Check if the current box has no keys
         if not boxes[current_box]:
             break
-        # if the box is already opened
-        # if current_box in visited:
-        #     queue.append(key)
-        #     continue
         # Open the box
         visited.add(current_box)
         # Add the keys from the current box to the queue
