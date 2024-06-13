@@ -42,3 +42,21 @@ Starting with 1 'H'.
 - Copy All (1 operation), Paste twice (2 operations) to get 3 'H's.
 - Copy All (1 operation), Paste twice (2 operations) to get 9 'H's.
 - Total operations: 1 (initial) + 2 + 1 + 2 = 6 operations.
+
+# Code Explanation
+
+- Initial Check:
+  Checks if n is less than or equal to 1. If so, returns 0 because it's impossible to achieve the target with the given operations.
+- Initialization:
+  - Initializes operations to count the number of operations performed.
+  - Initializes factor to 2, the smallest prime factor.
+- Prime Factorization
+  - A while loop runs as long as factor \* factor is less than or equal to n, ensuring only factors up to the square root of n are checked.
+  - For each factor, a nested while loop divides n by the factor as long as n is divisible by that factor.
+  - For each division, the factor is added to the operations count, representing a series of Copy All followed by Paste operations.
+  - Updates n by dividing it by the current factor.
+  - Increments the factor to check the next potential divisor.
+- Handle Remaining Factor:
+  - If after exiting the loop n is still greater than 1, it means n itself is a prime number greater than its square root. In this case, n is added to the operations count.
+- Return the Result:
+  - Returns the total number of operations accumulated in operations.
