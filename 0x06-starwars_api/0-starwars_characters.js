@@ -49,7 +49,7 @@ const getData = (url) => {
 
 getData(url)
   .then((data) => {
-    console.log("Character Names:\n", data); // Print as a list of strings
+    console.log(data); // Print as a list of strings
   })
   .catch((error) => {
     console.error("Error fetching data:", error);
