@@ -1,0 +1,12 @@
+What is the https Module?
+
+The https module in Node.js provides a way to make HTTP requests over the Secure Sockets Layer (SSL) and Transport Layer Security (TLS) protocols. This is useful for communicating securely over the internet, ensuring that data sent between the client and server is encrypted.
+=========
+
+Step-by-Step Execution:
+
+1. Initial Request: The https.get function sends an HTTPS GET request to https://api.example.com/large-data.
+2. Receiving Data: As data starts to arrive from the server, the 'data' event is triggered multiple times, each time with a chunk of the response.
+3. Concatenating Chunks: Each chunk is concatenated to the data variable. This happens repeatedly until all data chunks have been received.
+4. End of Data: Once the entire response has been received, the 'end' event is triggered. At this point, the complete response data is available in the data variable.
+5. Processing Data: The data variable, which now contains the entire response, is parsed as JSON and logged to the console.
